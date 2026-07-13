@@ -1,0 +1,8 @@
+[
+  {"id":1,"year":2025,"type":"Conference paper","title":"Optimal Trajectory Planning for Aerial Threat Neutralization Using a Multi-Drone System with Limited Resources","venue":"COBEM 2025","authors":"Benicio Barbosa Cruz, Jorge Antonio Ricardo Jr., Rubens Junqueira Magalhães Afonso, Davi Antônio dos Santos"},
+  {"id":2,"year":2025,"type":"Artigo","title":"Sistema de Detecção de Gestos Para Controle de Drones","venue":"Artigo publicado","authors":"João Pedro Santana Silva Santos, Benicio Barbosa Cruz, Stephanie K. A. Sousa, et al."},
+  {"id":3,"year":2025,"type":"Dissertação de mestrado","title":"Planejamento Ótimo de Trajetórias para Neutralização de Ameaças Aéreas com Sistema Multidrones e Recursos Limitados","venue":"Instituto Tecnológico de Aeronáutica","authors":"Benicio Barbosa Cruz"},
+  {"id":4,"year":2025,"type":"Conference paper","title":"Low-Cost Optical Communication System for Short-Range Underwater Applications","venue":"Conference paper","authors":"Benicio Barbosa Cruz, Stephanie K. Alves de Sousa, Phillipe C. Santos, Fábio L. Sá Prudente"},
+  {"id":5,"year":2024,"type":"Conference paper","title":"A Mixed-Reality Experimental Indoor Testbed for Evaluation of Drone Flight Control Methods","venue":"CBA 2024","authors":"Benicio Barbosa Cruz, Jorge Antonio Ricardo Jr., Davi Antônio dos Santos"},
+  {"id":6,"year":2024,"type":"Artigo em congresso","title":"Desenvolvimento de um Veículo Subaquático Remotamente Operado, de Baixo Custo, para Fins Educacionais","venue":"Conference paper","authors":"Leonardo A. N. Fontes, Benicio Barbosa Cruz, Stephanie K. Alves, et al."}
+]
