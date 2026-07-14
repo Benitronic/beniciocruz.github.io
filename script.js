@@ -72,6 +72,8 @@ const projectCopy={
     ]
   }
 };
+let lang="pt",publications=[],bioOpen=false;
+const $=id=>document.getElementById(id);
 let lastProjectTrigger=null;
 function renderProjects(){
   const t=projectCopy[lang];
@@ -117,8 +119,6 @@ $("projectDialog").addEventListener("close",()=>{
   lastProjectTrigger?.focus();
 });
 const supabaseClient=window.supabase.createClient("https://vfyiczqntletivvxvpmo.supabase.co","sb_publishable_radG_i41rNtT3pI_YhXUpg_qbvl5nJO");
-let lang="pt",publications=[],bioOpen=false;
-const $=id=>document.getElementById(id);
 function render(){const t=copy[lang];document.documentElement.lang=lang==="pt"?"pt-BR":"en";document.title=`Benicio Barbosa Cruz | ${lang==="pt"?"Portfólio acadêmico":"Academic portfolio"}`;$("nav").innerHTML=t.nav.map(([l,id])=>`<button data-scroll="${id}">${l}</button>`).join("");$("cvLink").innerHTML=t.cv+" ↗";["eyebrow","role","lead","explore","expertise","location","outputs","broad","aboutLabel","about1","about2","bioLabel","bioShort","areaLabel","areaTitle","areaIntro","pubsLabel","pubsTitle","pubsIntro","expLabel","expTitle","contactEye","contactTitle","contactText","emailAction"].forEach(id=>$(id).innerHTML=t[id]);$("currentAffiliation").textContent=t.affiliation;$("aboutTitle").innerHTML=t.aboutTitle;$("bioLong").innerHTML=t.bioLong.map(x=>`<p>${x}</p>`).join("");$("bioToggle").textContent=bioOpen?t.bioLess:t.bioMore;$("areaGrid").innerHTML=t.areas.map((a,i)=>`<article><span>0${i+1}</span><h3>${a[0]}</h3><p>${a[1]}</p><div class="mini-line"></div></article>`).join("");$("pubSearch").placeholder=t.search;$("studioLink").textContent=t.studio;$("timeline").innerHTML=t.degrees.map(x=>`<article><time>${x[0]}</time><div><h3>${x[1]}</h3><p>${x[2]}</p></div></article>`).join("");$("copyEmail").textContent=t.copyEmail;$("backTop").textContent=t.top;$("footerText").textContent=t.footer;document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));fillYears();renderPublications();renderProjects();bindScroll();}
 function fillYears(){const current=$("yearFilter").value||"all",years=[...new Set(publications.map(p=>p.year))].sort((a,b)=>b-a);$("yearFilter").innerHTML=`<option value="all">${copy[lang].allYears}</option>`+years.map(y=>`<option>${y}</option>`).join("");$("yearFilter").value=current;}
 function renderPublications(){const publicationCount=$("publicationCount");if(publicationCount)publicationCount.textContent=publications.length;const q=$("pubSearch").value.toLowerCase(),year=$("yearFilter").value;const list=publications.filter(p=>(`${p.title} ${p.venue} ${p.authors}`.toLowerCase().includes(q))&&(year==="all"||String(p.year)===year)).sort((a,b)=>b.year-a.year||a.id-b.id);$("pubList").innerHTML=list.map(p=>`<article><time>${p.year}</time><div><span>${p.type}</span><h3>${p.title}</h3><p>${p.authors}</p><small>${p.venue}</small></div><div class="pub-links">${p.doi?`<a target="_blank" rel="noopener" href="${p.doi}">DOI ↗</a>`:""}${p.pdf?`<a target="_blank" href="${p.pdf}">PDF ↓</a>`:""}</div></article>`).join("");}
