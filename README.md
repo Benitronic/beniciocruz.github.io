@@ -1,4 +1,4 @@
-# Benicio Barbosa Cruz
+# Benicio Barbosa Cruz - Phd Student
 
 Portfólio acadêmico bilíngue publicado com GitHub Pages.
 
